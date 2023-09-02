@@ -14,6 +14,11 @@ const App=()=>{
     .then((Response)=>Response.json())
     .then((color)=>setColors(color));
   },[]);
+  const click=(e)=>{
+    if(e.key==="space"){
+      randomColor()
+    }
+  }
 
   const randomColor=()=>{
     firstDiv();
@@ -66,8 +71,9 @@ const App=()=>{
         <ThirdBtn/>
         <FourthBtn/>
         <FifthBtn/>
-        <button className="changeBtn" onClick={randomColor}>Click to Change Palette</button>
-      </div>
+        <button className="changeBtn" onClick={randomColor} onKeyDown={click}>Click to Change Palette</button>
+        <p className="spaceBar">Press SpaceBar to change color palette</p>
+        </div>
     
     </div>
   )
